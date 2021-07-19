@@ -75,13 +75,13 @@ while True:
         box = bbox[i]
         x, y, w, h = box[0], box[1], box[2], box[3]
         area = w * h
-        if area < 18000:
+        if area < 18000 and area > 4000:
             cv2.rectangle(img, (x, y), (x + w, h + y),
                           color=(0, 255, 0),
                           thickness=2)
-            cv2.putText(img, f'I-{getUid()}', (box[0] + 10, box[1] + 30),
-                        cv2.FONT_HERSHEY_COMPLEX, 1, (255, 255, 0), 1)
-            no_of_cars += 0.05
+            cv2.putText(img, f'I-{getUid()}', (box[0] + 10, box[1] + 20),
+                        cv2.FONT_HERSHEY_COMPLEX, 0.5, (255, 0, 0), 2)
+            no_of_cars += 0.02
 
     cv2.imshow("Output", img)
     cv2.waitKey(1)
