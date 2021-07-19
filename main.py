@@ -80,8 +80,8 @@ while True:
                           color=(0, 255, 0),
                           thickness=2)
             cv2.putText(img, f'I-{getUid()}', (box[0] + 10, box[1] + 30),
-                        cv2.FONT_HERSHEY_COMPLEX, 1, (0, 255, 0), 1)
-            no_of_cars += 0.2
+                        cv2.FONT_HERSHEY_COMPLEX, 1, (255, 255, 0), 1)
+            no_of_cars += 0.05
 
     cv2.imshow("Output", img)
     cv2.waitKey(1)
